@@ -1,7 +1,7 @@
 {
   "appId": "com.krishank1201.arwaste",
   "appName": "AR Waste Segregation",
-  "webDir": "dist",
+  "webDir": "www",
   "plugins": {
     "SplashScreen": {
       "launchAutoHide": false
