@@ -9,13 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      actions: read
-      checks: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # Manual clone using the runner's built-in token
+      - name: Clone repository
+        run: |
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git .
+          git checkout ${{ github.ref_name }}
 
       - uses: actions/setup-node@v4
         with:
